@@ -43,7 +43,7 @@ export default function Hero() {
       id="inicio"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleResetMouse}
-      className="relative pt-32 pb-24 md:pt-40 md:pb-36 bg-brand-cream overflow-hidden select-none"
+      className="relative pt-32 pb-12 md:pt-40 md:pb-16 bg-brand-cream overflow-hidden select-none"
     >
       {/* Premium background video loop with customized readability vignette overlay */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -154,15 +154,30 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Column Right: Elegant Brand Graphic Showcase (Replacing the video with the beautifully crafted brand image) */}
+          {/* Column Right: Elegant Video Showcase (Dynamic runner athlete video) */}
           <div className="lg:col-span-5 relative flex items-center justify-center reveal-element">
-            <div className="relative w-full max-w-[440px] aspect-square rounded-[36px] bg-[#FFFFFF] border border-brand-sand/70 overflow-hidden shadow-2xl shadow-brand-forest/5 flex items-center group">
-              <img
-                src={showcaseImg}
-                alt="Vitamee - Vitamina para sua melhor versão"
-                referrerPolicy="no-referrer"
+            <div className="relative w-full max-w-[440px] aspect-square rounded-[36px] bg-white border border-brand-sand/70 overflow-hidden shadow-2xl shadow-brand-forest/5 flex items-center group">
+              <video
+                src="https://assets.mixkit.co/videos/preview/mixkit-woman-running-on-the-road-during-the-day-40013-large.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
+              
+              {/* Overlaid elegant floating badge */}
+              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-brand-sand/50 flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-brand-lime text-brand-dark flex items-center justify-center shrink-0">
+                  <Sparkles className="w-4 h-4 text-brand-forest" />
+                </div>
+                <div className="text-left">
+                  <span className="block font-sans font-extrabold text-[10px] text-brand-dark uppercase tracking-widest leading-none">Alta Performance</span>
+                  <span className="block text-[9px] text-[#6A6C62] font-light mt-1">Sua melhor versão em movimento constante.</span>
+                </div>
+              </div>
             </div>
           </div>
 

@@ -71,15 +71,8 @@ export default function Header() {
           />
         </div>
 
-        {/* Anchors - CENTER (Desktop) */}
-        <nav className="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-bold text-brand-dark/80">
-          <button
-            onClick={() => scrollToSection('manifesto')}
-            className="hover:text-brand-forest transition-colors cursor-pointer relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-lime hover:after:w-full after:transition-all after:duration-300"
-          >
-            Nosso Manifesto
-          </button>
-        </nav>
+        {/* Anchors - CENTER (Desktop) - Clean, minimalist header with no links */}
+        <div className="hidden md:block" />
 
         {/* Action Button - RIGHT */}
         <div className="flex items-center space-x-4">
@@ -110,12 +103,6 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-brand-cream/98 backdrop-blur-lg border-b border-brand-sand shadow-lg">
           <div className="px-5 py-6 space-y-4 flex flex-col text-sm font-bold tracking-wider uppercase text-brand-dark">
-            <button
-              onClick={() => scrollToSection('manifesto')}
-              className="text-left py-2 hover:text-brand-forest transition-colors"
-            >
-              Nosso Manifesto
-            </button>
             <a
               href="https://www.instagram.com/usevitamee"
               target="_blank"
