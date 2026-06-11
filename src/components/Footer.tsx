@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Instagram, Facebook, Youtube, ShieldCheck, Mail, Heart, CheckCircle } from 'lucide-react';
+import { Send, Instagram, Facebook, ShieldCheck, Mail, Heart, CheckCircle } from 'lucide-react';
 import logoImg from '../assets/images/logo_vitamee.png';
 
 export default function Footer() {
@@ -96,24 +96,26 @@ export default function Footer() {
             <img
               src={logoImg}
               alt="Vitamee"
-              className="h-15 w-auto object-contain transition-transform duration-500 hover:scale-105"
+              className="h-[140px] -my-10 w-auto object-contain transition-transform duration-500 hover:scale-105"
               referrerPolicy="no-referrer"
             />
           </div>
 
           <p className="text-xs text-gray-500 font-light leading-relaxed">
-            Vitamee e o símbolo Vitamee Smile são marcas comerciais de pureza e biodisponibilidade. Desenvolvemos soluções nutricionais limpas focadas na evolução do organismo humano.
+            Mais do que suplementos de alta qualidade, estamos construindo uma comunidade unida pelo autocuidado inteligente. Faça parte do movimento Vitamee antes do lançamento oficial e receba em primeira mão os pilares para uma rotina mais leve e saudável.
           </p>
 
           <div className="flex items-center justify-center md:justify-start gap-4 text-[#6A6C62]">
             <a href="https://www.instagram.com/usevitamee" target="_blank" rel="noreferrer" className="hover:text-brand-forest transition-colors" aria-label="Instagram">
               <Instagram className="w-5 h-5" />
             </a>
+            <a href="https://www.tiktok.com/@vitameebr" target="_blank" rel="noreferrer" className="hover:text-brand-forest transition-colors" aria-label="TikTok">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+              </svg>
+            </a>
             <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-brand-forest transition-colors" aria-label="Facebook">
               <Facebook className="w-5 h-5" />
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="hover:text-brand-forest transition-colors" aria-label="YouTube">
-              <Youtube className="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -124,9 +126,6 @@ export default function Footer() {
           <ul className="space-y-2 text-xs text-[#6A6C62] font-semibold animate-none">
             <li>
               <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-brand-forest transition-colors cursor-pointer">Início</button>
-            </li>
-            <li>
-              <button onClick={() => scrollToSection('previa-produtos')} className="hover:text-brand-forest transition-colors cursor-pointer">Fórmulas Em Breve</button>
             </li>
             <li>
               <button onClick={() => scrollToSection('manifesto')} className="hover:text-brand-forest transition-colors cursor-pointer">Nosso Manifesto</button>

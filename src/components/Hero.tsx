@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Leaf, Sparkles, CheckCircle, Shield, User } from 'lucide-react';
+import { ArrowRight, Sparkles, CheckCircle } from 'lucide-react';
+import showcaseImg from '../assets/images/vitamee_showcase_1781145655594.png';
 import brandVideo from '../assets/images/vitamme.mp4';
 
 export default function Hero() {
@@ -63,6 +64,7 @@ export default function Hero() {
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-brand-lime/10 rounded-full blur-[110px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Column Left: High Converting Header & Lead Form */}
@@ -72,11 +74,11 @@ export default function Hero() {
             </div>
 
             <div className="space-y-4">
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] text-brand-dark">
+              <h1 className="font-sans font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] text-brand-dark">
                 Vitamina para sua <br />
                 <span className="relative">
-                  melhor versão.
-                  <span className="absolute left-0 bottom-1 w-full h-2 bg-brand-lime rounded"></span>
+                  melhor versão!
+                  <span className="absolute left-0 bottom-1.5 w-full h-2.5 bg-brand-lime/90 rounded"></span>
                 </span>
               </h1>
               
@@ -152,67 +154,15 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Column Right: Elegant Medical-Grade Video Showcase (Second layout inspired by user's second screenshot) */}
+          {/* Column Right: Elegant Brand Graphic Showcase (Replacing the video with the beautifully crafted brand image) */}
           <div className="lg:col-span-5 relative flex items-center justify-center reveal-element">
-            <div className="relative w-full max-w-[440px] aspect-[16/10] sm:aspect-square rounded-[36px] bg-[#FFFFFF] border border-brand-sand/70 overflow-hidden shadow-2xl shadow-brand-forest/5 flex items-center group">
-              
-              {/* Premium video showcase of the spinning bottle label */}
-              <div className="absolute inset-0 z-0">
-                <video
-                  src={brandVideo}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  className="w-full h-full object-cover saturate-[1.1] transition-transform duration-700 group-hover:scale-[1.03]"
-                />
-              </div>
-
-              {/* Sophisticated gradient overlay for pristine legibility of text */}
-              <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white/60 via-white/20 to-transparent z-1 pointer-events-none" />
-
-              {/* Left-aligned medical-grade micro-credentials (identical to second screenshot) */}
-              <div className="absolute left-6 sm:left-10 top-0 bottom-0 flex flex-col justify-center space-y-12 z-10 select-none pointer-events-none">
-                
-                {/* Badge 1: Saúde e equilíbrio */}
-                <div className="flex flex-col items-start text-left space-y-2.5">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-[22px] bg-white/70 backdrop-blur-md border border-[#EAE8E0]/60 flex items-center justify-center text-brand-forest shadow-md shadow-brand-forest/5">
-                    <Shield className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1.5px] text-[#083220]" />
-                  </div>
-                  <div className="space-y-0.5 pl-1">
-                    <span className="block font-sans text-xs sm:text-sm font-extrabold text-brand-dark tracking-tight leading-tight">
-                      Saúde e
-                    </span>
-                    <span className="block font-sans text-xs sm:text-sm font-extrabold text-brand-dark tracking-tight leading-tight">
-                      equilíbrio
-                    </span>
-                  </div>
-                </div>
-
-                {/* Badge 2: Bem-estar todos os dias */}
-                <div className="flex flex-col items-start text-left space-y-2.5">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-[22px] bg-white/70 backdrop-blur-md border border-[#EAE8E0]/60 flex items-center justify-center text-brand-forest shadow-md shadow-brand-forest/5">
-                    <User className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1.5px] text-[#083220]" />
-                  </div>
-                  <div className="space-y-0.5 pl-1">
-                    <span className="block font-sans text-xs sm:text-sm font-extrabold text-brand-dark tracking-tight leading-tight">
-                      Bem-estar
-                    </span>
-                    <span className="block font-sans text-xs sm:text-sm font-extrabold text-brand-dark tracking-tight leading-tight">
-                      todos os dias
-                    </span>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Decorative Subtle Smile Badge overlay on bottom right */}
-              <div className="absolute bottom-6 right-6 bg-[#083220] py-2 px-3.5 rounded-full shadow-lg border border-brand-lime/20 z-10 flex items-center gap-1.5 pointer-events-none">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-lime animate-pulse" />
-                <span className="text-[9px] uppercase font-black tracking-widest text-[#CBEF43]">Pureza Real</span>
-              </div>
-
+            <div className="relative w-full max-w-[440px] aspect-square rounded-[36px] bg-[#FFFFFF] border border-brand-sand/70 overflow-hidden shadow-2xl shadow-brand-forest/5 flex items-center group">
+              <img
+                src={showcaseImg}
+                alt="Vitamee - Vitamina para sua melhor versão"
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              />
             </div>
           </div>
 

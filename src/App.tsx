@@ -3,7 +3,6 @@ import { useReveal } from './hooks/useReveal';
 
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Products from './components/Products';
 import About from './components/About';
 import Footer from './components/Footer';
 
@@ -21,9 +20,6 @@ export default function App() {
       <main className="flex-grow">
         {/* Core Hero Form with VIP signup */}
         <Hero />
-
-        {/* 4-column Conceptual Wellness Grid */}
-        <Products />
 
         {/* Brand Manifesto (Clean supplements focus) */}
         <About />

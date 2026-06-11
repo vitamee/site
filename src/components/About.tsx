@@ -22,15 +22,12 @@ export default function About() {
               <div className="h-0.5 bg-brand-lime w-16 rounded" />
             </div>
 
-            <div className="space-y-4 font-sans text-sm sm:text-base text-gray-500 leading-relaxed font-light">
-              <p>
-                O mercado de suplementação tradicional está saturado de atalhos industriais: corantes sintéticos nocivos, excipientes inertes como o dióxido de titânio, adoçantes que prejudicam a microbiota e compostos sintéticos que o corpo mal consegue absorver.
-              </p>
-              <p className="font-bold text-brand-dark">
-                Nós decidimos fazer diferente. Acreditamos que a saúde celular de verdade não se constrói com químicos de laboratórios genéricos, mas com ingredientes biológicos puros que falam a mesma língua das suas células.
+            <div className="space-y-5 font-sans text-sm sm:text-base text-[#6A6C62] leading-relaxed font-light">
+              <p className="text-brand-dark font-bold">
+                Acreditamos que a verdadeira saúde começa nas pequenas escolhas do dia a dia. Fundada com o propósito de simplificar o cuidado pessoal, a Vitamee nasceu da necessidade de suplementação inteligente e de alta qualidade.
               </p>
               <p>
-                Na <strong className="text-brand-dark font-semibold">Vitamee</strong>, nossas fórmulas são criadas do zero utilizando micronutrientes quelados com os maiores índices de biodisponibilidade do mundo. Quando desenvolvemos um produto, nos comprometemos a manter o frasco 100% livre de enchimentos desnecessários. É a ciência e a natureza unidos pela sua máxima longevidade.
+                Não se trata apenas de cápsulas, mas de uma filosofia de vida onde consistência e equilíbrio caminham juntos. Nossas fórmulas são desenvolvidas com ingredientes rigorosamente selecionados para que você possa alcançar a sua melhor versão, dia após dia, com praticidade e confiança.
               </p>
             </div>
 

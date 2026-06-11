@@ -66,19 +66,13 @@ export default function Header() {
           <img
             src={logoImg}
             alt="Vitamee"
-            className="h-15 sm:h-18 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+            className="h-[135px] sm:h-[165px] -my-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
             referrerPolicy="no-referrer"
           />
         </div>
 
         {/* Anchors - CENTER (Desktop) */}
         <nav className="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-bold text-brand-dark/80">
-          <button
-            onClick={() => scrollToSection('previa-produtos')}
-            className="hover:text-brand-forest transition-colors cursor-pointer relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-lime hover:after:w-full after:transition-all after:duration-300"
-          >
-            Fórmulas Em Breve
-          </button>
           <button
             onClick={() => scrollToSection('manifesto')}
             className="hover:text-brand-forest transition-colors cursor-pointer relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-lime hover:after:w-full after:transition-all after:duration-300"
@@ -116,12 +110,6 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-brand-cream/98 backdrop-blur-lg border-b border-brand-sand shadow-lg">
           <div className="px-5 py-6 space-y-4 flex flex-col text-sm font-bold tracking-wider uppercase text-brand-dark">
-            <button
-              onClick={() => scrollToSection('previa-produtos')}
-              className="text-left py-2 hover:text-brand-forest transition-colors"
-            >
-              Fórmulas Em Breve
-            </button>
             <button
               onClick={() => scrollToSection('manifesto')}
               className="text-left py-2 hover:text-brand-forest transition-colors"
