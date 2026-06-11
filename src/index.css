@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --color-brand-green: #083220;
+  --color-brand-green-hover: #0c482e;
+  --color-brand-forest: #083220;
+  --color-brand-forest-hover: #0c482e;
+  --color-brand-lime: #CBEF43;
+  --color-brand-lime-hover: #b8d937;
+  --color-brand-dark: #0F100D;
+  --color-brand-medium: #4A4D45;
+  --color-brand-light: #FDFDFD;
+  --color-brand-cream: #F4F3EE;
+  --color-brand-sand: #EAE8E0;
+}
+
+/* Custom fade-in up reveal styles for IntersectionObserver */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-element.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
