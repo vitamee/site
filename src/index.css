@@ -4,17 +4,25 @@
 @theme {
   --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
-  --color-brand-green: #083220;
-  --color-brand-green-hover: #0c482e;
-  --color-brand-forest: #083220;
-  --color-brand-forest-hover: #0c482e;
+  
+  /* Brand New Visual Direction colors requested by user */
+  --color-brand-black: #111111;
+  --color-brand-dark: #1A1A1A;
   --color-brand-lime: #CBEF43;
-  --color-brand-lime-hover: #b8d937;
-  --color-brand-dark: #0F100D;
-  --color-brand-medium: #4A4D45;
-  --color-brand-light: #FDFDFD;
-  --color-brand-cream: #F4F3EE;
-  --color-brand-sand: #EAE8E0;
+  --color-brand-lime-hover: #B5DA2A;
+  --color-brand-white: #FFFFFF;
+  --color-brand-light: #F8F8F8;
+  --color-brand-gray: #6B7280;
+  --color-brand-border: #E5E7EB;
+
+  /* Legacy aliases mapping for perfect backward rendering and backward compatibility */
+  --color-brand-green: #111111;
+  --color-brand-green-hover: #1A1A1A;
+  --color-brand-forest: #111111;
+  --color-brand-forest-hover: #1A1A1A;
+  --color-brand-medium: #6B7280;
+  --color-brand-cream: #F8F8F8;
+  --color-brand-sand: #E5E7EB;
 }
 
 /* Custom fade-in up reveal styles for IntersectionObserver */
@@ -27,6 +35,23 @@
 .reveal-element.revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Stagger delay classes for scroll-reveal effects */
+.reveal-delay-100 {
+  transition-delay: 100ms;
+}
+.reveal-delay-200 {
+  transition-delay: 200ms;
+}
+.reveal-delay-300 {
+  transition-delay: 300ms;
+}
+.reveal-delay-400 {
+  transition-delay: 400ms;
+}
+.reveal-delay-500 {
+  transition-delay: 500ms;
 }
 
 /* Smooth scrolling */

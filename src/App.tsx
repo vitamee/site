@@ -3,8 +3,10 @@ import { useReveal } from './hooks/useReveal';
 
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Products from './components/Products';
 import About from './components/About';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   // Initialize scroll-driven Intersection Observer
@@ -21,12 +23,18 @@ export default function App() {
         {/* Core Hero Form with VIP signup */}
         <Hero />
 
+        {/* Dynamic Concept Products & Labs */}
+        <Products />
+
         {/* Brand Manifesto (Clean supplements focus) */}
         <About />
       </main>
 
       {/* Conversational footer with secondary lead box */}
       <Footer />
+
+      {/* Floating Scroll to Top button */}
+      <ScrollToTop />
 
     </div>
   );

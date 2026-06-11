@@ -122,7 +122,7 @@ export default function Products() {
           <span className="text-brand-forest text-xs font-bold uppercase tracking-widest block bg-brand-lime/40 border border-brand-sand px-3 py-1.5 rounded-full inline-block">
             Inovação Científica & Ativos Puros
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-dark tracking-tight font-medium leading-[1.2]">
+          <h2 className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl text-brand-dark tracking-tight leading-[1.2]">
             Fórmulas Ativas em Breve
           </h2>
           <p className="text-sm text-gray-500 font-light leading-relaxed max-w-lg mx-auto">
@@ -162,7 +162,7 @@ export default function Products() {
                   {/* Category Info */}
                   <div className="space-y-3">
                     <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest block">{cat.categoryName}</span>
-                    <h3 className="font-serif text-xl font-bold text-brand-dark leading-snug">{cat.name}</h3>
+                    <h3 className="font-sans font-bold text-xl text-brand-dark leading-snug">{cat.name}</h3>
                     <p className="text-xs text-gray-500 font-light leading-relaxed">{cat.description}</p>
                   </div>
 
@@ -209,7 +209,7 @@ export default function Products() {
                     <span className="inline-block w-2.5 h-2.5 rounded-full bg-brand-forest animate-pulse" />
                     <span className="text-[10px] uppercase font-bold tracking-wider text-brand-forest">VITAMEE BIO-LABS CONNECT</span>
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-brand-dark">
+                  <h3 className="font-sans text-2xl font-bold text-brand-dark">
                     Painel de Otimização Nutricional de {activeCategory.name}
                   </h3>
                 </div>
@@ -390,7 +390,7 @@ export default function Products() {
               <Leaf className="w-6 h-6 stroke-[2px]" />
             </div>
             <div>
-              <h4 className="font-serif text-lg font-bold text-white">Práticas Honestidade Científica</h4>
+              <h4 className="font-sans text-lg font-bold text-white">Práticas Honestidade Científica</h4>
               <p className="text-xs text-brand-cream/80 font-light mt-0.5">Certificados por matérias-primas limpas de fornecedores rastreáveis.</p>
             </div>
           </div>

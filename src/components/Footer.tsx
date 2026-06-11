@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Send, Instagram, Facebook, ShieldCheck, Mail, Heart, CheckCircle } from 'lucide-react';
-import logoImg from '../assets/images/logo_vitamee.png';
+import Logo from './Logo';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -37,7 +37,7 @@ export default function Footer() {
       
       {/* Upper Section: Elegant Secondary Leads Capture Container */}
       <div className="py-20 bg-brand-sand/40 border-b border-brand-sand/50">
-        <div className="max-w-4xl mx-auto px-4 text-center space-y-6">
+        <div className="max-w-4xl mx-auto px-4 text-center space-y-6 reveal-element">
           <div className="space-y-2">
             <span className="text-[10px] uppercase tracking-widest font-extrabold text-brand-forest">Faça parte do ecossistema</span>
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-brand-dark animate-none">
@@ -87,18 +87,13 @@ export default function Footer() {
       </div>
 
       {/* Middle Section: Links & Structural Index */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-12 gap-10 reveal-element">
         
         {/* Brand details */}
         <div className="md:col-span-4 space-y-4 text-center md:text-left">
-          {/* Logo image with click interaction */}
-          <div className="flex items-center justify-center md:justify-start gap-1 py-1 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img
-              src={logoImg}
-              alt="Vitamee"
-              className="h-[140px] -my-10 w-auto object-contain transition-transform duration-500 hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
+          {/* Logo with click interaction */}
+          <div className="flex items-center justify-center md:justify-start py-1 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <Logo withBg={true} className="h-8 sm:h-9 transition-transform duration-500 hover:scale-105" />
           </div>
 
           <p className="text-xs text-gray-500 font-light leading-relaxed">

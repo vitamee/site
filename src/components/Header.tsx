@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import logoImg from '../assets/images/logo_vitamee.png';
+import Logo from './Logo';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,15 +60,10 @@ export default function Header() {
         {/* Brand Logo - LEFT */}
         <div
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex items-center gap-1.5 cursor-pointer select-none py-1 group"
+          className="flex items-center cursor-pointer select-none py-1 group"
           id="nav-logo"
         >
-          <img
-            src={logoImg}
-            alt="Vitamee"
-            className="h-[135px] sm:h-[165px] -my-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
-            referrerPolicy="no-referrer"
-          />
+          <Logo withBg={true} className="h-8 sm:h-9 transition-transform duration-500 group-hover:scale-105" />
         </div>
 
         {/* Anchors - CENTER (Desktop) - Clean, minimalist header with no links */}

@@ -8,11 +8,11 @@ export default function About() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title (Centered) */}
-        <div className="text-center space-y-4 mb-10 md:mb-12">
-          <span className="text-xs uppercase tracking-widest font-extrabold text-brand-forest bg-brand-lime/40 border border-brand-sand px-3.5 py-1.5 rounded-full inline-block">
+        <div className="text-center space-y-4 mb-10 md:mb-12 reveal-element">
+          <span className="text-xs uppercase tracking-widest font-extrabold text-brand-forest bg-brand-lime/40 border border-brand-sand px-3.5 py-1.5 rounded-full inline-block font-sans">
             Manifesto Vitamee
           </span>
-          <h2 className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.2] text-brand-dark max-w-3xl mx-auto">
+          <h2 className="font-serif font-bold italic text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.2] text-brand-dark max-w-3xl mx-auto">
             O que nos move: Um manifesto por suplementos verdadeiramente limpos.
           </h2>
           <div className="h-0.5 bg-brand-lime w-16 rounded mx-auto" />
@@ -47,8 +47,15 @@ export default function About() {
         </div>
 
         {/* Text Block spanning the whole area below the video */}
-        <div className="space-y-8 reveal-element max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 font-sans text-[#6A6C62] leading-relaxed font-light">
+        <div className="space-y-8 reveal-element max-w-4xl mx-auto pt-6">
+          {/* Section: Nossa História */}
+          <div className="text-center md:text-left mb-1">
+            <h3 className="font-serif text-xl md:text-2xl italic text-brand-black font-semibold border-b-2 border-brand-lime inline-block pb-1">
+              Nossa História
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-11 font-sans text-brand-gray leading-relaxed font-light">
             <p className="text-brand-dark font-semibold text-lg sm:text-xl md:border-r md:border-brand-sand/40 md:pr-8">
               Acreditamos que a verdadeira saúde começa nas pequenas escolhas do dia a dia. Fundada com o propósito de simplificar o cuidado pessoal, a Vitamee nasceu da necessidade de suplementação inteligente e de alta qualidade.
             </p>
@@ -59,7 +66,7 @@ export default function About() {
 
           {/* Quality Commitments Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-brand-sand/40">
-            <div className="flex gap-4 items-start p-5 bg-white rounded-[24px] border border-brand-sand/65 shadow-xs">
+            <div className="flex gap-4 items-start p-5 bg-white rounded-[24px] border border-brand-sand/65 shadow-xs reveal-element reveal-delay-100">
               <div className="p-3 rounded-2xl bg-brand-lime text-brand-dark shrink-0">
                 <ShieldCheck className="w-5 h-5 stroke-[2px]" />
               </div>
@@ -69,7 +76,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="flex gap-4 items-start p-5 bg-white rounded-[24px] border border-brand-sand/65 shadow-xs">
+            <div className="flex gap-4 items-start p-5 bg-white rounded-[24px] border border-brand-sand/65 shadow-xs reveal-element reveal-delay-300">
               <div className="p-3 rounded-2xl bg-brand-forest text-brand-lime shrink-0">
                 <Beaker className="w-5 h-5 stroke-[2px]" />
               </div>
