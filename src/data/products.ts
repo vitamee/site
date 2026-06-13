@@ -1,107 +1,173 @@
-import { Product, Article } from '../types';
+import { Product, Category, Article } from '../types';
+
+// ⚠️ IMAGENS: por enquanto usando as artes existentes como placeholder.
+// Troque pelos potes reais salvando em src/assets/images/ e atualizando o caminho.
+import imgDiario from '../assets/images/vitamee_diario_1781132066272.png';
+import imgFoco from '../assets/images/vitamee_foco_1781132080788.png';
+import imgVitalidade from '../assets/images/vitamee_vitalidade_1781132093907.png';
+import imgShowcase from '../assets/images/vitamee_showcase_1781145655594.png';
+import imgBanner from '../assets/images/vitamee_banner_1781145880233.png';
+import imgStory from '../assets/images/vitamee_story_woman_1781132110424.png';
+
+export const CATEGORIES: Category[] = [
+  { id: 'energia',      name: 'Energia',      tagline: 'Mais disposição para o seu dia',        accent: 'energia' },
+  { id: 'imunidade',    name: 'Imunidade',    tagline: 'Proteção para viver melhor',           accent: 'imunidade' },
+  { id: 'sono',         name: 'Sono',         tagline: 'Noites melhores, dias melhores',        accent: 'sono' },
+  { id: 'beleza',       name: 'Beleza',       tagline: 'Cabelos, pele e unhas saudáveis',       accent: 'beleza' },
+  { id: 'performance',  name: 'Performance',  tagline: 'Mais foco, força e melhores resultados', accent: 'performance' },
+  { id: 'longevidade',  name: 'Longevidade',  tagline: 'Saúde hoje, qualidade para sempre',     accent: 'longevidade' },
+];
 
 export const PRODUCTS: Product[] = [
   {
-    id: 'diario',
-    name: 'Vitamee Diário',
+    id: 'hair-skin',
+    name: 'Hair & Skin Gummies',
     badge: 'Mais Vendido',
     badgeColor: 'brand-green',
-    subtitle: 'Suplementação essencial e diária',
-    shortDesc: 'A base que o seu corpo precisa para manter a imunidade alta, o metabolismo ativo e a energia constante ao longo do dia.',
-    price: 129.90,
-    oldPrice: 159.90,
-    image: '/src/assets/images/vitamee_diario_1781132066272.png',
+    category: 'beleza',
+    subtitle: 'Cabelos, pele e unhas saudáveis',
+    shortDesc: 'Beleza que começa de dentro. Gomas sabor morango que nutrem cabelos fortes, pele radiante e unhas saudáveis.',
+    price: 94.90,
+    oldPrice: 119.90,
+    image: imgDiario,
     benefits: [
-      'Estreita e fortalece o sistema imunológico',
-      'Auxilia na absorção de micronutrientes essenciais',
-      'Combate o cansaço físico estrutural',
-      'Minerais quelatos com altíssima absorção celular'
+      'Cabelos mais fortes e com brilho',
+      'Pele radiante e hidratada de dentro pra fora',
+      'Unhas mais resistentes',
+      'Sabor morango, zero culpa',
     ],
-    ingredients: [
-      'Vitamina C (L-ascorbato de cálcio)',
-      'Vitamina D3 (Colecalciferol vegano)',
-      'Metilfolato (B9 ativa)',
-      'Metilcobalamina (B12 ativa)',
-      'Zinco Bisglicinato',
-      'Selênio Quelato'
-    ],
-    howToUse: 'Tomar 1 cápsula pela manhã junto à primeira refeição para melhor absorção.',
+    ingredients: ['Biotina', 'Colágeno', 'Vitamina C', 'Zinco', 'Vitamina E'],
+    howToUse: 'Tomar 2 gomas por dia, de preferência junto a uma refeição.',
     rating: 4.9,
-    reviewsCount: 1420
+    reviewsCount: 1420,
   },
   {
-    id: 'foco',
-    name: 'Vitamee Foco',
-    badge: 'Alta Performance',
-    badgeColor: 'blue-600',
-    subtitle: 'Nitidez mental e foco absoluto',
-    shortDesc: 'Formulado com nootrópicos naturais para otimizar suas conexões neurais, promovendo clareza, memória e produtividade sem agitação.',
-    price: 149.90,
-    oldPrice: 189.90,
-    image: '/src/assets/images/vitamee_foco_1781132080788.png',
+    id: 'vitaminas-minerais',
+    name: 'Vitaminas e Minerais Gummies',
+    badge: 'Completo',
+    badgeColor: 'cat-imunidade',
+    category: 'imunidade',
+    subtitle: 'Imunidade e disposição todos os dias',
+    shortDesc: 'O complexo diário de vitaminas e minerais essenciais — sabor Maracujá Relax ou Morango Delight.',
+    price: 94.90,
+    oldPrice: 99.90,
+    image: imgShowcase,
     benefits: [
-      'Melhora imediata da concentração e foco estendido',
-      'Estimula a neuroproteção e a memória de curto prazo',
-      'Reduz a névoa mental (brain fog) do fim de tarde',
-      'Energia cognitiva fluida e sem picos de ansiedade'
+      'Fortalece o sistema imunológico',
+      'Combate o cansaço e a fadiga',
+      'Apoia o metabolismo de energia',
+      'Antioxidantes que protegem as células',
     ],
-    ingredients: [
-      'L-Teanina',
-      'Fosfatidilserina',
-      'Extrato de Bacopa Monnieri',
-      'Coenzima Q10',
-      'Magnésio Treonato',
-      'Cafeína microencapsulada de liberação lenta'
-    ],
-    howToUse: 'Tomar 1 a 2 cápsulas logo ao iniciar suas tarefas mais desafiadoras.',
+    ingredients: ['Vitamina C', 'Vitamina D', 'Complexo B', 'Zinco', 'Selênio'],
+    howToUse: 'Tomar 2 gomas por dia.',
     rating: 4.8,
-    reviewsCount: 840
+    reviewsCount: 980,
   },
   {
-    id: 'vitalidade',
-    name: 'Vitamee Vitalidade',
-    badge: 'Fórmula Premium',
-    badgeColor: 'amber-500',
-    subtitle: 'Longevidade corpórea e equilíbrio',
-    shortDesc: 'Poderosos fitoterápicos de adaptógenos para modular os hormônios do estresse, fortalecer tecidos corporais e restaurar o vigor natural.',
-    price: 139.90,
-    oldPrice: 169.90,
-    image: '/src/assets/images/vitamee_vitalidade_1781132093907.png',
+    id: 'melatonina',
+    name: 'Melatonina Gummies',
+    badge: 'Sono Profundo',
+    badgeColor: 'cat-sono',
+    category: 'sono',
+    subtitle: 'Sono profundo e recuperador',
+    shortDesc: 'Gomas que ajudam a pegar no sono mais rápido e a acordar renovado, sem pesar no dia seguinte.',
+    price: 89.90,
+    oldPrice: 109.90,
+    image: imgVitalidade,
     benefits: [
-      'Reduz sintomas de estresse e fadiga adrenal',
-      'Ação antioxidante contra o envelhecimento celular',
-      'Melhora a regeneração muscular e o sono',
-      'Equilibra a disposição física integral'
+      'Ajuda a reduzir o tempo para adormecer',
+      'Melhora a qualidade do sono',
+      'Auxilia no equilíbrio do ciclo do sono',
+      'Sem dependência',
     ],
-    ingredients: [
-      'Ashwagandha Organic Extract',
-      'Coenzima Q10 Premium',
-      'Resveratrol de uvas nobres',
-      'Extrato de Gengibre concentrado',
-      'Vitamina E natural (Tocoferol)',
-      'Picolinato de Cromo'
+    ingredients: ['Melatonina', 'Magnésio', 'Vitamina B6', 'Camomila'],
+    howToUse: 'Tomar 1 goma cerca de 30 minutos antes de dormir.',
+    rating: 4.9,
+    reviewsCount: 1130,
+  },
+  {
+    id: 'omega-3',
+    name: 'Ômega 3 Gummies',
+    badge: 'Coração & Cérebro',
+    badgeColor: 'cat-longevidade',
+    category: 'longevidade',
+    subtitle: 'Coração saudável e cérebro forte',
+    shortDesc: 'Ômega 3 em gomas saborosas, sem aquele gosto de peixe — para coração, cérebro e disposição.',
+    price: 99.90,
+    oldPrice: 124.90,
+    image: imgBanner,
+    benefits: [
+      'Apoia a saúde cardiovascular',
+      'Contribui para a função cognitiva',
+      'Ação anti-inflamatória',
+      'Sem refluxo nem gosto residual',
     ],
-    howToUse: 'Tomar 1 cápsula à noite ou ao final do dia para induzir o relaxamento e recuperação.',
-    rating: 5.0,
-    reviewsCount: 610
-  }
+    ingredients: ['Ômega 3 (EPA e DHA)', 'Vitamina E'],
+    howToUse: 'Tomar 2 gomas por dia.',
+    rating: 4.7,
+    reviewsCount: 640,
+  },
+  {
+    id: 'b12-energy',
+    name: 'B12 Energy Gummies',
+    badge: 'Energia & Foco',
+    badgeColor: 'cat-energia',
+    category: 'energia',
+    subtitle: 'Energia e foco para o seu dia',
+    shortDesc: 'Vitamina B12 de alta absorção em gomas — energia constante e foco, sem picos de ansiedade.',
+    price: 139.90,
+    oldPrice: 159.90,
+    image: imgStory,
+    benefits: [
+      'Mais energia e disposição ao longo do dia',
+      'Apoia a concentração e o foco',
+      'Combate o cansaço físico e mental',
+      'Ideal para dietas veganas',
+    ],
+    ingredients: ['Vitamina B12 (Metilcobalamina)', 'Complexo B'],
+    howToUse: 'Tomar 1 a 2 gomas pela manhã.',
+    rating: 4.8,
+    reviewsCount: 720,
+  },
+  {
+    id: 'bcaa',
+    name: 'BCAA Gummies',
+    badge: 'Performance',
+    badgeColor: 'cat-performance',
+    category: 'performance',
+    subtitle: 'Força e recuperação muscular',
+    shortDesc: 'Aminoácidos essenciais em gomas sabor limão fresh — para treinar mais e recuperar melhor.',
+    price: 94.90,
+    oldPrice: 109.90,
+    image: imgFoco,
+    benefits: [
+      'Auxilia na recuperação muscular',
+      'Reduz a fadiga durante o treino',
+      'Apoia o ganho de massa magra',
+      'Sabor limão fresh',
+    ],
+    ingredients: ['L-Leucina', 'L-Isoleucina', 'L-Valina'],
+    howToUse: 'Tomar 2 a 3 gomas antes ou após o treino.',
+    rating: 4.7,
+    reviewsCount: 510,
+  },
 ];
 
 export const ARTICLES: Article[] = [
   {
     id: 'art-1',
-    title: 'Como a micronutrição diária afeta a sua neuroplasticidade e disposição cerebral.',
-    category: 'Suplementos e Rotina',
+    title: 'Como a suplementação diária afeta sua energia e disposição ao longo do dia.',
+    category: 'Saúde e Rotina',
     readTime: '4 min de leitura',
     image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600',
-    slug: 'suplementos-rotina-neuroplasticidade'
+    slug: 'suplementacao-diaria-energia',
   },
   {
     id: 'art-2',
-    title: 'Entendendo adaptógenos: como plantas milenares modulam o cortisol e estresse.',
+    title: 'Gummies funcionam mesmo? Entenda a ciência por trás das gomas funcionais.',
     category: 'Saúde e Ciência',
     readTime: '6 min de leitura',
     image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=600',
-    slug: 'entendendo-adaptogenos-saude'
-  }
+    slug: 'gummies-funcionam-ciencia',
+  },
 ];

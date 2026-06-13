@@ -1,12 +1,21 @@
+export type CategoryId =
+  | 'energia'
+  | 'imunidade'
+  | 'sono'
+  | 'beleza'
+  | 'performance'
+  | 'longevidade';
+
 export interface Product {
   id: string;
   name: string;
-  badge: string;
-  badgeColor: string; // e.g. green, blue, yellow
+  badge?: string;
+  badgeColor?: string;
+  category: CategoryId;
   subtitle: string;
   shortDesc: string;
   price: number;
-  oldPrice: number;
+  oldPrice?: number;
   image: string;
   benefits: string[];
   ingredients: string[];
@@ -20,6 +29,14 @@ export interface CartItem {
   quantity: number;
 }
 
+export interface Category {
+  id: CategoryId;
+  name: string;
+  tagline: string;
+  /** classe tailwind do acento pastel, ex: 'cat-energia' */
+  accent: string;
+}
+
 export interface Article {
   id: string;
   title: string;
@@ -28,4 +45,3 @@ export interface Article {
   image: string;
   slug: string;
 }
-

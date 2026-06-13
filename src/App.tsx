@@ -3,40 +3,31 @@ import { useReveal } from './hooks/useReveal';
 
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Categories from './components/Categories';
 import Products from './components/Products';
-import About from './components/About';
+import Philosophy from './components/Philosophy';
+import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
-  // Initialize scroll-driven Intersection Observer
+  // Scroll-driven reveal (IntersectionObserver)
   useReveal([]);
 
   return (
-    <div className="min-h-screen bg-brand-cream font-sans text-brand-dark antialiased selection:bg-brand-lime/40 selection:text-brand-dark flex flex-col justify-between">
-      
-      {/* Flutuante Header */}
+    <div className="min-h-screen bg-white font-sans text-brand-navy antialiased selection:bg-brand-green/30 selection:text-brand-navy flex flex-col">
       <Header />
 
-      {/* Main Pre-Launch Modules */}
       <main className="flex-grow">
-        {/* Core Hero Form with VIP signup */}
         <Hero />
-
-        {/* Dynamic Concept Products & Labs */}
+        <Categories />
         <Products />
-
-        {/* Brand Manifesto (Clean supplements focus) */}
-        <About />
+        <Philosophy />
+        <Testimonials />
       </main>
 
-      {/* Conversational footer with secondary lead box */}
       <Footer />
-
-      {/* Floating Scroll to Top button */}
       <ScrollToTop />
-
     </div>
   );
 }
-

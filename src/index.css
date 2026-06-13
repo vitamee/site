@@ -1,28 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
-  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
-  
-  /* Brand New Visual Direction colors requested by user */
-  --color-brand-black: #111111;
-  --color-brand-dark: #1A1A1A;
-  --color-brand-lime: #CBEF43;
-  --color-brand-lime-hover: #B5DA2A;
-  --color-brand-white: #FFFFFF;
-  --color-brand-light: #F8F8F8;
-  --color-brand-gray: #6B7280;
-  --color-brand-border: #E5E7EB;
+  --font-sans: "Poppins", "Inter", system-ui, sans-serif;
+  --font-display: "Poppins", "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
 
-  /* Legacy aliases mapping for perfect backward rendering and backward compatibility */
-  --color-brand-green: #111111;
-  --color-brand-green-hover: #1A1A1A;
-  --color-brand-forest: #111111;
-  --color-brand-forest-hover: #1A1A1A;
+  /* ===========================================================
+     Paleta Vitamee — baseada no layout/mockup oficial
+     Branco + Navy/Carvão + Verde da marca + Dourado + Pastéis
+     =========================================================== */
+  --color-brand-navy: #16243B;        /* dark — topbar, footer, headings, CTA */
+  --color-brand-navy-hover: #1F3151;
+  --color-brand-charcoal: #1F2D3D;    /* texto forte / wordmark do logo */
+  --color-brand-green: #8CC63F;       /* verde vital — acento da marca / sorriso */
+  --color-brand-green-hover: #7AB52F;
+  --color-brand-green-soft: #D7EBC4;  /* verde suave */
+  --color-brand-gold: #C9A24B;        /* dourado — toque premium */
+  --color-brand-white: #FFFFFF;
+  --color-brand-cream: #F8F9FA;       /* fundo alternativo */
+  --color-brand-gray: #6B7280;        /* texto secundário */
+  --color-brand-border: #E8EAED;
+
+  /* Pastéis por categoria (cards "Escolha seu objetivo") */
+  --color-cat-energia: #F5B544;
+  --color-cat-imunidade: #F08A5D;
+  --color-cat-sono: #B6A8D9;
+  --color-cat-beleza: #F2A6C2;
+  --color-cat-performance: #5B8DD9;
+  --color-cat-longevidade: #5FC9B8;
+
+  /* Aliases de compatibilidade (componentes antigos continuam renderizando) */
+  --color-brand-black: #16243B;
+  --color-brand-dark: #1F2D3D;
+  --color-brand-lime: #8CC63F;
+  --color-brand-lime-hover: #7AB52F;
+  --color-brand-light: #F8F9FA;
+  --color-brand-forest: #16243B;
+  --color-brand-forest-hover: #1F3151;
   --color-brand-medium: #6B7280;
-  --color-brand-cream: #F8F8F8;
-  --color-brand-sand: #E5E7EB;
+  --color-brand-sand: #E8EAED;
 }
 
 /* Custom fade-in up reveal styles for IntersectionObserver */
@@ -37,24 +54,16 @@
   transform: translateY(0);
 }
 
-/* Stagger delay classes for scroll-reveal effects */
-.reveal-delay-100 {
-  transition-delay: 100ms;
-}
-.reveal-delay-200 {
-  transition-delay: 200ms;
-}
-.reveal-delay-300 {
-  transition-delay: 300ms;
-}
-.reveal-delay-400 {
-  transition-delay: 400ms;
-}
-.reveal-delay-500 {
-  transition-delay: 500ms;
-}
+.reveal-delay-100 { transition-delay: 100ms; }
+.reveal-delay-200 { transition-delay: 200ms; }
+.reveal-delay-300 { transition-delay: 300ms; }
+.reveal-delay-400 { transition-delay: 400ms; }
+.reveal-delay-500 { transition-delay: 500ms; }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
 }
