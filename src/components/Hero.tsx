@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, FlaskConical, ShieldCheck, Leaf, Eye, Heart, Sparkles, Star } from 'lucide-react';
-import heroProduct from '../assets/images/vitamee_showcase_1781145655594.png';
+import heroPoster from '../assets/images/vitamee_morango.jpeg';
+import heroVideo from '../assets/videos/vitamee_hero.mp4';
 
 const scrollTo = (id: string) => {
   const el = document.getElementById(id);
@@ -71,11 +72,19 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Direita: produto em destaque */}
+          {/* Direita: produto em destaque (vídeo) */}
           <div className="lg:col-span-6 relative flex items-center justify-center reveal-element">
-            <div className="relative w-full max-w-lg">
-              <div className="absolute inset-0 bg-gradient-to-tr from-pink-100/60 via-brand-green-soft/30 to-transparent rounded-[40px] blur-2xl" />
-              <img src={heroProduct} alt="Suplementos Vitamee" className="relative w-full object-contain drop-shadow-2xl" />
+            <div className="relative w-full max-w-[360px]">
+              <div className="absolute -inset-6 bg-gradient-to-tr from-pink-100/70 via-brand-green-soft/30 to-transparent rounded-[48px] blur-2xl" />
+              <video
+                src={heroVideo}
+                poster={heroPoster}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="relative w-full aspect-[9/16] object-cover rounded-[32px] shadow-2xl border border-white/60"
+              />
             </div>
 
             {/* Benefícios laterais flutuantes */}
