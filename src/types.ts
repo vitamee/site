@@ -9,19 +9,23 @@ export type CategoryId =
 export interface Product {
   id: string;
   name: string;
+  /** sabor, ex: 'Morango Delight' */
+  flavor?: string;
   badge?: string;
   badgeColor?: string;
   category: CategoryId;
   subtitle: string;
   shortDesc: string;
-  price: number;
+  price?: number;
   oldPrice?: number;
   image: string;
-  benefits: string[];
-  ingredients: string[];
-  howToUse: string;
-  rating: number;
-  reviewsCount: number;
+  benefits?: string[];
+  ingredients?: string[];
+  howToUse?: string;
+  rating?: number;
+  reviewsCount?: number;
+  /** produto ainda não lançado — mostra "em breve" e desativa a compra */
+  comingSoon?: boolean;
 }
 
 export interface CartItem {

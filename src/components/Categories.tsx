@@ -1,7 +1,12 @@
 import React from 'react';
-import { Zap, Shield, Moon, Sparkles, Rocket, Heart, ArrowRight } from 'lucide-react';
 import { CATEGORIES } from '../data/products';
 import { CategoryId } from '../types';
+import energia from '../assets/images/cards/energia.webp';
+import imunidade from '../assets/images/cards/imunidade.webp';
+import sono from '../assets/images/cards/sono.webp';
+import beleza from '../assets/images/cards/beleza.webp';
+import performance from '../assets/images/cards/performance.webp';
+import longevidade from '../assets/images/cards/longevidade.webp';
 
 const scrollToProducts = () => {
   const el = document.getElementById('produtos');
@@ -11,14 +16,13 @@ const scrollToProducts = () => {
   }
 };
 
-// Estilos estáticos por categoria (classes literais p/ o Tailwind detectar)
-const STYLES: Record<CategoryId, { icon: React.ComponentType<any>; bg: string; iconColor: string; border: string }> = {
-  energia:     { icon: Zap,      bg: 'bg-cat-energia/10',     iconColor: 'text-cat-energia',     border: 'hover:border-cat-energia/50' },
-  imunidade:   { icon: Shield,   bg: 'bg-cat-imunidade/10',   iconColor: 'text-cat-imunidade',   border: 'hover:border-cat-imunidade/50' },
-  sono:        { icon: Moon,     bg: 'bg-cat-sono/15',        iconColor: 'text-cat-sono',        border: 'hover:border-cat-sono/50' },
-  beleza:      { icon: Sparkles, bg: 'bg-cat-beleza/12',      iconColor: 'text-cat-beleza',      border: 'hover:border-cat-beleza/50' },
-  performance: { icon: Rocket,   bg: 'bg-cat-performance/10', iconColor: 'text-cat-performance', border: 'hover:border-cat-performance/50' },
-  longevidade: { icon: Heart,    bg: 'bg-cat-longevidade/12', iconColor: 'text-cat-longevidade', border: 'hover:border-cat-longevidade/50' },
+const CARD_IMAGES: Record<CategoryId, string> = {
+  energia,
+  imunidade,
+  sono,
+  beleza,
+  performance,
+  longevidade,
 };
 
 export default function Categories() {
@@ -35,28 +39,21 @@ export default function Categories() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
-          {CATEGORIES.map((cat) => {
-            const s = STYLES[cat.id];
-            const Icon = s.icon;
-            return (
-              <button
-                key={cat.id}
-                onClick={scrollToProducts}
-                className={`group ${s.bg} border border-transparent ${s.border} rounded-3xl p-5 text-center flex flex-col items-center gap-3 transition-all hover:-translate-y-1 hover:shadow-md cursor-pointer`}
-              >
-                <div className={`w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center ${s.iconColor}`}>
-                  <Icon className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-sm text-brand-navy">{cat.name}</h3>
-                  <p className="text-[11px] text-brand-gray mt-1 leading-tight">{cat.tagline}</p>
-                </div>
-                <span className={`text-[10px] font-bold uppercase tracking-wider ${s.iconColor} inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity`}>
-                  Ver produtos <ArrowRight className="w-3 h-3" />
-                </span>
-              </button>
-            );
-          })}
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={scrollToProducts}
+              aria-label={`Ver produtos de ${cat.name}`}
+              className="group rounded-3xl overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/50"
+            >
+              <img
+                src={CARD_IMAGES[cat.id]}
+                alt={`${cat.name} — ${cat.tagline}`}
+                loading="lazy"
+                className="w-full h-auto block transition-transform duration-300 group-hover:scale-[1.03]"
+              />
+            </button>
+          ))}
         </div>
       </div>
     </section>

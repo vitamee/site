@@ -1,12 +1,16 @@
 import { Product, Category, Article } from '../types';
 
-// ⚠️ IMAGENS: por enquanto usando as artes existentes como placeholder.
-// Troque pelos potes reais salvando em src/assets/images/ e atualizando o caminho.
+// Fotos reais dos potes (recortadas dos materiais em /produtos)
+import imgMorango from '../assets/images/vitamee_morango_sq.jpeg';
+import imgAbacaxi from '../assets/images/vitamee_abacaxi.jpeg';
+import imgMaracuja from '../assets/images/vitamee_maracuja.jpeg';
+import imgLimao from '../assets/images/vitamee_limao.jpeg';
+import imgOmega3 from '../assets/images/vitamee_omega3.jpeg';
+
+// ⚠️ "Em breve": ainda usando artes antigas como placeholder até ter foto real
 import imgDiario from '../assets/images/vitamee_diario_1781132066272.png';
 import imgFoco from '../assets/images/vitamee_foco_1781132080788.png';
 import imgVitalidade from '../assets/images/vitamee_vitalidade_1781132093907.png';
-import imgShowcase from '../assets/images/vitamee_showcase_1781145655594.png';
-import imgBanner from '../assets/images/vitamee_banner_1781145880233.png';
 import imgStory from '../assets/images/vitamee_story_woman_1781132110424.png';
 
 export const CATEGORIES: Category[] = [
@@ -18,138 +22,144 @@ export const CATEGORIES: Category[] = [
   { id: 'longevidade',  name: 'Longevidade',  tagline: 'Saúde hoje, qualidade para sempre',     accent: 'longevidade' },
 ];
 
+// Base comum da linha Vitaminas e Minerais (90 gummies, sem glúten/açúcar/gelatina)
+const VM_BENEFITS = [
+  'Vitamina C & antioxidantes',
+  'Sem glúten, sem açúcar, sem gelatina',
+  '90 gummies por pote',
+  'Sabor delicioso, zero culpa',
+];
+const VM_INGREDIENTS = ['Vitamina C', 'Vitamina D', 'Complexo B', 'Zinco', 'Selênio'];
+const VM_HOWTO = 'Tomar 2 gummies por dia, de preferência junto a uma refeição.';
+
+// ⚠️ PREÇOS PLACEHOLDER — confirmar os valores reais com o Luan antes de divulgar
+const VM_PRICE = 89.90;
+const OMEGA_PRICE = 99.90;
+
 export const PRODUCTS: Product[] = [
   {
-    id: 'hair-skin',
-    name: 'Hair & Skin Gummies',
+    id: 'vm-morango',
+    name: 'Vitaminas e Minerais',
+    flavor: 'Morango Delight',
     badge: 'Mais Vendido',
     badgeColor: 'brand-green',
-    category: 'beleza',
-    subtitle: 'Cabelos, pele e unhas saudáveis',
-    shortDesc: 'Beleza que começa de dentro. Gomas sabor morango que nutrem cabelos fortes, pele radiante e unhas saudáveis.',
-    price: 94.90,
-    oldPrice: 119.90,
-    image: imgDiario,
-    benefits: [
-      'Cabelos mais fortes e com brilho',
-      'Pele radiante e hidratada de dentro pra fora',
-      'Unhas mais resistentes',
-      'Sabor morango, zero culpa',
-    ],
-    ingredients: ['Biotina', 'Colágeno', 'Vitamina C', 'Zinco', 'Vitamina E'],
-    howToUse: 'Tomar 2 gomas por dia, de preferência junto a uma refeição.',
+    category: 'imunidade',
+    subtitle: 'Gummies sabor morango — vitaminas e minerais essenciais',
+    shortDesc: 'O complexo diário de vitaminas e minerais essenciais, em gummies sabor morango irresistível.',
+    price: VM_PRICE,
+    image: imgMorango,
+    benefits: VM_BENEFITS,
+    ingredients: VM_INGREDIENTS,
+    howToUse: VM_HOWTO,
     rating: 4.9,
     reviewsCount: 1420,
   },
   {
-    id: 'vitaminas-minerais',
-    name: 'Vitaminas e Minerais Gummies',
-    badge: 'Completo',
-    badgeColor: 'cat-imunidade',
+    id: 'vm-abacaxi',
+    name: 'Vitaminas e Minerais',
+    flavor: 'Abacaxi Delight',
     category: 'imunidade',
-    subtitle: 'Imunidade e disposição todos os dias',
-    shortDesc: 'O complexo diário de vitaminas e minerais essenciais — sabor Maracujá Relax ou Morango Delight.',
-    price: 94.90,
-    oldPrice: 99.90,
-    image: imgShowcase,
-    benefits: [
-      'Fortalece o sistema imunológico',
-      'Combate o cansaço e a fadiga',
-      'Apoia o metabolismo de energia',
-      'Antioxidantes que protegem as células',
-    ],
-    ingredients: ['Vitamina C', 'Vitamina D', 'Complexo B', 'Zinco', 'Selênio'],
-    howToUse: 'Tomar 2 gomas por dia.',
+    subtitle: 'Gummies sabor abacaxi — vitaminas e minerais essenciais',
+    shortDesc: 'Vitaminas e minerais essenciais em gummies refrescantes sabor abacaxi.',
+    price: VM_PRICE,
+    image: imgAbacaxi,
+    benefits: VM_BENEFITS,
+    ingredients: VM_INGREDIENTS,
+    howToUse: VM_HOWTO,
     rating: 4.8,
-    reviewsCount: 980,
+    reviewsCount: 760,
   },
   {
-    id: 'melatonina',
-    name: 'Melatonina Gummies',
-    badge: 'Sono Profundo',
-    badgeColor: 'cat-sono',
-    category: 'sono',
-    subtitle: 'Sono profundo e recuperador',
-    shortDesc: 'Gomas que ajudam a pegar no sono mais rápido e a acordar renovado, sem pesar no dia seguinte.',
-    price: 89.90,
-    oldPrice: 109.90,
-    image: imgVitalidade,
-    benefits: [
-      'Ajuda a reduzir o tempo para adormecer',
-      'Melhora a qualidade do sono',
-      'Auxilia no equilíbrio do ciclo do sono',
-      'Sem dependência',
-    ],
-    ingredients: ['Melatonina', 'Magnésio', 'Vitamina B6', 'Camomila'],
-    howToUse: 'Tomar 1 goma cerca de 30 minutos antes de dormir.',
-    rating: 4.9,
-    reviewsCount: 1130,
+    id: 'vm-maracuja',
+    name: 'Vitaminas e Minerais',
+    flavor: 'Maracujá Delight',
+    badge: 'Novo',
+    badgeColor: 'cat-energia',
+    category: 'imunidade',
+    subtitle: 'Gummies sabor maracujá — vitaminas e minerais essenciais',
+    shortDesc: 'Vitaminas e minerais essenciais em gummies sabor maracujá, do jeitinho que o brasileiro ama.',
+    price: VM_PRICE,
+    image: imgMaracuja,
+    benefits: VM_BENEFITS,
+    ingredients: VM_INGREDIENTS,
+    howToUse: VM_HOWTO,
+    rating: 4.8,
+    reviewsCount: 540,
+  },
+  {
+    id: 'vm-limao',
+    name: 'Vitaminas e Minerais',
+    flavor: 'Limão Delight',
+    category: 'imunidade',
+    subtitle: 'Gummies sabor limão — vitaminas e minerais essenciais',
+    shortDesc: 'Vitaminas e minerais essenciais em gummies sabor limão fresh, leves e deliciosas.',
+    price: VM_PRICE,
+    image: imgLimao,
+    benefits: VM_BENEFITS,
+    ingredients: VM_INGREDIENTS,
+    howToUse: VM_HOWTO,
+    rating: 4.7,
+    reviewsCount: 480,
   },
   {
     id: 'omega-3',
     name: 'Ômega 3 Gummies',
-    badge: 'Coração & Cérebro',
-    badgeColor: 'cat-longevidade',
+    flavor: 'Laranja-Cítrico',
+    badge: 'Fórmula Concentrada',
+    badgeColor: 'cat-energia',
     category: 'longevidade',
-    subtitle: 'Coração saudável e cérebro forte',
-    shortDesc: 'Ômega 3 em gomas saborosas, sem aquele gosto de peixe — para coração, cérebro e disposição.',
-    price: 99.90,
-    oldPrice: 124.90,
-    image: imgBanner,
+    subtitle: 'Gummies com DHA & EPA — coração e cérebro',
+    shortDesc: 'Ômega 3 (DHA & EPA) em gummies sabor laranja-cítrico, sem gosto de peixe. Auxilia na saúde cardiovascular.',
+    price: OMEGA_PRICE,
+    image: imgOmega3,
     benefits: [
-      'Apoia a saúde cardiovascular',
-      'Contribui para a função cognitiva',
-      'Ação anti-inflamatória',
-      'Sem refluxo nem gosto residual',
+      'Com DHA & EPA — fórmula concentrada',
+      'Auxilia na saúde cardiovascular',
+      'Sem açúcar, sem gelatina',
+      '90 gummies por pote',
     ],
-    ingredients: ['Ômega 3 (EPA e DHA)', 'Vitamina E'],
-    howToUse: 'Tomar 2 gomas por dia.',
-    rating: 4.7,
-    reviewsCount: 640,
+    ingredients: ['Ômega 3 (DHA e EPA)', 'Vitamina E'],
+    howToUse: 'Tomar 2 gummies por dia.',
+    rating: 4.8,
+    reviewsCount: 610,
+  },
+
+  // ───────── Em breve ─────────
+  {
+    id: 'hair-skin',
+    name: 'Hair & Skin Gummies',
+    category: 'beleza',
+    subtitle: 'Cabelos, pele e unhas saudáveis',
+    shortDesc: 'Beleza que começa de dentro — biotina, colágeno e vitaminas para cabelos, pele e unhas.',
+    image: imgDiario,
+    comingSoon: true,
+  },
+  {
+    id: 'melatonina',
+    name: 'Melatonina Gummies',
+    category: 'sono',
+    subtitle: 'Sono profundo e recuperador',
+    shortDesc: 'Gummies que ajudam a pegar no sono mais rápido e acordar renovado.',
+    image: imgVitalidade,
+    comingSoon: true,
   },
   {
     id: 'b12-energy',
     name: 'B12 Energy Gummies',
-    badge: 'Energia & Foco',
-    badgeColor: 'cat-energia',
     category: 'energia',
     subtitle: 'Energia e foco para o seu dia',
-    shortDesc: 'Vitamina B12 de alta absorção em gomas — energia constante e foco, sem picos de ansiedade.',
-    price: 139.90,
-    oldPrice: 159.90,
+    shortDesc: 'Vitamina B12 de alta absorção em gummies — energia constante e foco.',
     image: imgStory,
-    benefits: [
-      'Mais energia e disposição ao longo do dia',
-      'Apoia a concentração e o foco',
-      'Combate o cansaço físico e mental',
-      'Ideal para dietas veganas',
-    ],
-    ingredients: ['Vitamina B12 (Metilcobalamina)', 'Complexo B'],
-    howToUse: 'Tomar 1 a 2 gomas pela manhã.',
-    rating: 4.8,
-    reviewsCount: 720,
+    comingSoon: true,
   },
   {
     id: 'bcaa',
     name: 'BCAA Gummies',
-    badge: 'Performance',
-    badgeColor: 'cat-performance',
     category: 'performance',
     subtitle: 'Força e recuperação muscular',
-    shortDesc: 'Aminoácidos essenciais em gomas sabor limão fresh — para treinar mais e recuperar melhor.',
-    price: 94.90,
-    oldPrice: 109.90,
+    shortDesc: 'Aminoácidos essenciais em gummies — para treinar mais e recuperar melhor.',
     image: imgFoco,
-    benefits: [
-      'Auxilia na recuperação muscular',
-      'Reduz a fadiga durante o treino',
-      'Apoia o ganho de massa magra',
-      'Sabor limão fresh',
-    ],
-    ingredients: ['L-Leucina', 'L-Isoleucina', 'L-Valina'],
-    howToUse: 'Tomar 2 a 3 gomas antes ou após o treino.',
-    rating: 4.7,
-    reviewsCount: 510,
+    comingSoon: true,
   },
 ];
 
