@@ -48,30 +48,50 @@ export default function Products() {
 
               {/* Conteúdo */}
               <div className="p-6 flex flex-col flex-grow">
-                <div className="flex items-center gap-1 text-brand-gold mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className={`w-3.5 h-3.5 ${i < Math.round(p.rating) ? 'fill-current' : ''}`} />
-                  ))}
-                  <span className="text-[11px] text-brand-gray ml-1">({p.reviewsCount})</span>
-                </div>
+                {p.rating != null && (
+                  <div className="flex items-center gap-1 text-brand-gold mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className={`w-3.5 h-3.5 ${i < Math.round(p.rating!) ? 'fill-current' : ''}`} />
+                    ))}
+                    {p.reviewsCount != null && (
+                      <span className="text-[11px] text-brand-gray ml-1">({p.reviewsCount})</span>
+                    )}
+                  </div>
+                )}
 
                 <h3 className="font-bold text-lg text-brand-navy leading-snug">{p.name}</h3>
                 <p className="text-sm text-brand-gray mt-1 flex-grow">{p.subtitle}</p>
 
-                <div className="flex items-end gap-2 mt-4">
-                  {p.oldPrice && (
-                    <span className="text-sm text-brand-gray line-through">{formatBRL(p.oldPrice)}</span>
-                  )}
-                  <span className="text-2xl font-extrabold text-brand-navy">{formatBRL(p.price)}</span>
-                </div>
-                <span className="text-[11px] text-brand-gray">ou 6x de {formatBRL(p.price / 6)} sem juros</span>
+                {p.comingSoon || p.price == null ? (
+                  <>
+                    <div className="mt-4">
+                      <span className="text-lg font-extrabold text-brand-navy">Em breve</span>
+                    </div>
+                    <button
+                      disabled
+                      className="mt-5 w-full py-3 bg-brand-cream text-brand-gray rounded-full text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2 cursor-not-allowed"
+                    >
+                      Em breve
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <div className="flex items-end gap-2 mt-4">
+                      {p.oldPrice != null && (
+                        <span className="text-sm text-brand-gray line-through">{formatBRL(p.oldPrice)}</span>
+                      )}
+                      <span className="text-2xl font-extrabold text-brand-navy">{formatBRL(p.price)}</span>
+                    </div>
+                    <span className="text-[11px] text-brand-gray">ou 6x de {formatBRL(p.price / 6)} sem juros</span>
 
-                <button
-                  onClick={goToContact}
-                  className="mt-5 w-full py-3 bg-brand-navy hover:bg-brand-navy-hover text-white rounded-full text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2 transition-all cursor-pointer"
-                >
-                  <ShoppingBag className="w-4 h-4" /> Adicionar ao carrinho
-                </button>
+                    <button
+                      onClick={goToContact}
+                      className="mt-5 w-full py-3 bg-brand-navy hover:bg-brand-navy-hover text-white rounded-full text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2 transition-all cursor-pointer"
+                    >
+                      <ShoppingBag className="w-4 h-4" /> Adicionar ao carrinho
+                    </button>
+                  </>
+                )}
               </div>
             </article>
           ))}
